@@ -1,0 +1,70 @@
+<!-- Sidebar  -->
+<div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 shadow d-flex sticky-top">
+	<div
+		class="d-flex flex-sm-column flex-row flex-grow-1 px-3 pt-2 flex-shrink-0 p-3 bg-white"
+	>
+		<a
+			href="/"
+			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+		>
+			<span class="fs-4">
+				🗿 <span class="d-none d-sm-inline">Paint Store</span></span
+			>
+		</a>
+		<hr />
+		<ul
+			class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center"
+		>
+			<li class="nav-item">
+				<a
+					href="/"
+					class="nav-link <%= location === 'home' && 'active' %> link-dark"
+					aria-current="page"
+				>
+					<span class="me-2"><i class="fa fa-home"></i></span>
+					Home
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a
+					href="/paints"
+					class="nav-link <%= location === 'paint' && 'active' %> link-dark"
+					aria-current="page"
+				>
+					<span class="me-2"><i class="fa fa-database"></i></span>
+					Paints
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/customers"
+					class="nav-link <%= location === 'customer' ? 'active' : 'link-dark' %>"
+					aria-current="page"
+				>
+					<span class="me-2"><i class="fa fa-group"></i></span>
+					Customers
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/categories"
+					class="nav-link <%= location === 'category' ? 'active' : 'link-dark' %>"
+				>
+					<span class="me-2"><i class="fa fa-tags"></i></span>
+					Categories
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/orders"
+					class="nav-link <%= location === 'order' ? 'active' : 'link-dark' %>"
+				>
+					<span class="me-2"><i class="fa fa-pencil-square"></i></span>
+
+					Orders
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
