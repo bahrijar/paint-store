@@ -2,18 +2,98 @@
 <html lang="en">
 	<%- include('../../layouts/head.ejs') %>
 	<body>
-		<%- include('../../includes/svgMenu.ejs') %>
-
 		<div class="container-fluid overflow-hidden">
 			<div class="row vh-100 overflow-auto gx-5">
 				<!-- Sidebar  -->
 				<%- include('../../layouts/sidebar.ejs') %>
 
 				<!-- Content -->
-				<div class="col d-flex flex-column h-sm-100">
+				<div class="col d-flex flex-column h-100">
 					<main class="row overflow-auto">
 						<div class="col pt-4">
 							<h3>Home</h3>
+							<div class="row mt-4">
+								<div class="col-md-10">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-xl-3 col-lg-6">
+													<div class="card card-stats mb-4 mb-xl-0">
+														<div class="card-body">
+															<div class="row">
+																<div class="col">
+																	<h5
+																		class="card-title text-uppercase text-muted mb-0"
+																	>
+																		Total Paints
+																	</h5>
+																	<span class="h2 font-weight-bold mb-0"
+																		><%= result.countCategory %>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="card card-stats mb-4 mb-xl-0">
+														<div class="card-body">
+															<div class="row">
+																<div class="col">
+																	<h5
+																		class="card-title text-uppercase text-muted mb-0"
+																	>
+																		Total Customers
+																	</h5>
+																	<span class="h2 font-weight-bold mb-0"
+																		><%= result.countCustomer %>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="card card-stats mb-4 mb-xl-0">
+														<div class="card-body">
+															<div class="row">
+																<div class="col">
+																	<h5
+																		class="card-title text-uppercase text-muted mb-0"
+																	>
+																		Total Orders
+																	</h5>
+																	<span class="h2 font-weight-bold mb-0"
+																		><%= result.countOrder %>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6">
+													<div class="card card-stats mb-4 mb-xl-0">
+														<div class="card-body">
+															<div class="row">
+																<div class="col">
+																	<h5
+																		class="card-title text-uppercase text-muted mb-0"
+																	>
+																		Income
+																	</h5>
+																	<span class="h2 font-weight-bold mb-0"
+																		>Rp <%= result.totalIncome %>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</main>
 					<%- include('../../layouts/footer.ejs') %>

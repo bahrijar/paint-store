@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../../layouts/head.ejs') %>
+	<body>
+		<div class="container-fluid overflow-hidden">
+			<div class="row vh-100 overflow-auto gx-5">
+				<!-- Sidebar  -->
+				<%- include('../../layouts/sidebar.ejs') %>
+
+				<!-- Content -->
+				<div class="col d-flex flex-column h-sm-100">
+					<main class="row overflow-auto">
+						<div class="col pt-4">
+							<h3>Detail</h3>
+						</div>
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-body">
+										<div class="row mb-4">
+											<div class="col-sm-6">
+												<h6 class="mb-3">From:</h6>
+												<div>
+													<strong>Bahri Paint Store</strong>
+												</div>
+												<div>Jalan Perjalan Membawamu</div>
+												<div>2034 Hwekok, Zimbabwe</div>
+											</div>
+
+											<div class="col-sm-6">
+												<h6 class="mb-3">To:</h6>
+												<div>
+													<strong><%= result && result.Customer.name %></strong>
+												</div>
+												<div><%= result && result.Customer.address %></div>
+												<div>
+													<%= result && `${result.Customer.city},
+													${result.Customer.district}`%>
+												</div>
+												<div><%= result && result.Customer.phoneNumber %></div>
+											</div>
+										</div>
+
+										<div class="table-responsive-sm">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>Item</th>
+
+														<th class="right">Unit Cost</th>
+														<th class="center">Qty</th>
+														<th class="right">Total</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="left strong">
+															<%= result && result.Paint?.name %>
+														</td>
+
+														<td class="right">
+															Rp <%= result && result.Paint?.price %>
+														</td>
+														<td class="center">
+															<%= result && result.quantity %>
+														</td>
+														<td class="right">
+															Rp <%= result && result.totalPrice %>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</main>
+					<%- include('../../layouts/footer.ejs') %>
+				</div>
+			</div>
+		</div>
+
+		<%- include('../../includes/script.ejs') %>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../../layouts/head.ejs') %>
+	<body>
+		<div class="container-fluid overflow-hidden">
+			<div class="row vh-100 overflow-auto gx-5">
+				<!-- Sidebar  -->
+				<%- include('../../layouts/sidebar.ejs') %>
+
+				<!-- Content -->
+				<div class="col d-flex flex-column h-sm-100">
+					<main class="row overflow-auto">
+						<div class="col pt-4">
+							<h3><%= isCreateMode ? 'Create Order' : `Edit Order ${result.id}`  %></h3>
+						</div>
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-body">
+										<form
+											action="<%= isCreateMode && result === null ? '/orders/create' : '/orders/edit/' + result.id %>"
+											method="post"
+										>
+                      <div class="mb-3">
+												<label class="form-label">Customer</label>
+												<select name="CustomerId" class="form-select">
+                          <option  hidden disabled selected value>-- Select Customer --</option>
+													<% customers.forEach(customer => { %>
+													<option
+														value="<%=customer.id%>"
+														<%= result && result.Customer.id === customer.id ? "selected" : "" %>
+													>
+														<%=`${customer.id} - ${customer.name}`%>
+													</option>
+													<% }); %>
+												</select>
+											</div>
+
+                      <div class="mb-3">
+												<label class="form-label">Paint</label>
+												<select name="PaintId" class="form-select" >
+                          <option  hidden disabled selected value>-- Select Paint --</option>
+													<% paints.forEach(paint => { %>
+													<option
+                            data-obj="<%=paint%>"
+														value="<%=paint.id%>"
+														<%= result && result.Paint.id === paint.id ? "selected" : "" %>
+													>
+														<%=`${paint.name} [ stock: ${paint.stock} ]`%>
+													</option>
+													<% }); %>
+												</select>
+											</div>
+
+											<div class="mb-3">
+												<label for="quantity" class="form-label">Quantity</label>
+												<input
+													type="number"
+													name="quantity"
+													class="form-control"
+													id="quantity"
+                          min="0"
+													value="<%= result && result.quantity %>"
+												/>
+											</div>
+
+											<div class="d-flex justify-content-between">
+												<a
+													href="/orders"
+													class="btn btn-link mt-3 text-decoration-none"
+												>
+													Back
+												</a>
+												<button type="submit" class="btn btn-primary mt-3">
+													<% if (isCreateMode) { %>
+													<div>
+														<span><i class="fa fa-plus"></i></span> Create
+													</div>
+													<% } else { %>
+													<div>
+														<span class="me-3"
+															><i class="fa fa-pencil"></i
+														></span>
+														Edit
+													</div>
+													<% } %>
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</main>
+					<%- include('../../layouts/footer.ejs') %>
+				</div>
+			</div>
+		</div>
+
+		<%- include('../../includes/script.ejs') %>
+	</body>
+</html>

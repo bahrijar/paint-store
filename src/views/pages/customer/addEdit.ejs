@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../../layouts/head.ejs') %>
+	<body>
+		<div class="container-fluid overflow-hidden">
+			<div class="row vh-100 overflow-auto gx-5">
+				<!-- Sidebar  -->
+				<%- include('../../layouts/sidebar.ejs') %>
+
+				<!-- Content -->
+				<div class="col d-flex flex-column h-sm-100">
+					<main class="row overflow-auto">
+						<div class="col pt-4">
+							<h3><%= isCreateMode ? 'Create Customer' : 'Edit Customer' %></h3>
+						</div>
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-body">
+										<form
+											action="<%= isCreateMode && result === null ? '/customers/create' : '/customers/edit/' + result.id %>"
+											method="post"
+										>
+											<div class="mb-3">
+												<label for="name" class="form-label">Name</label>
+												<input
+													type="text"
+													name="name"
+													class="form-control"
+													id="name"
+													value="<%= result && result.name %>"
+												/>
+											</div>
+
+											<div class="mb-3">
+												<label for="phoneNumber" class="form-label"
+													>Phone Number</label
+												>
+												<input
+													type="text"
+													name="phoneNumber"
+													class="form-control"
+													id="phoneNumber"
+													value="<%= result && result.phoneNumber %>"
+												/>
+											</div>
+
+											<div class="mb-3">
+												<label for="city" class="form-label">City</label>
+												<input
+													type="text"
+													name="city"
+													class="form-control"
+													id="city"
+													value="<%= result && result.city %>"
+												/>
+											</div>
+
+											<div class="mb-3">
+												<label for="district" class="form-label"
+													>District</label
+												>
+												<input
+													type="text"
+													name="district"
+													class="form-control"
+													id="district"
+													value="<%= result && result.district %>"
+												/>
+											</div>
+
+											<div class="mb-3">
+												<label for="address" class="form-label">Address</label>
+												<textarea
+													class="form-control"
+													id="address"
+													name="address"
+												>
+<%= result && result.address %></textarea
+												>
+											</div>
+
+											<div class="d-flex justify-content-between">
+												<a
+													href="/customers"
+													class="btn btn-link mt-3 text-decoration-none"
+												>
+													Back
+												</a>
+												<button type="submit" class="btn btn-primary mt-3">
+													<% if (isCreateMode) { %>
+													<div>
+														<span><i class="fa fa-plus"></i></span> Create
+													</div>
+													<% } else { %>
+													<div>
+														<span class="me-3"
+															><i class="fa fa-pencil"></i
+														></span>
+														Edit
+													</div>
+													<% } %>
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</main>
+					<%- include('../../layouts/footer.ejs') %>
+				</div>
+			</div>
+		</div>
+
+		<%- include('../../includes/script.ejs') %>
+	</body>
+</html>

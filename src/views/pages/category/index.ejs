@@ -2,18 +2,90 @@
 <html lang="en">
 	<%- include('../../layouts/head.ejs') %>
 	<body>
-		<%- include('../../includes/svgMenu.ejs') %>
-
 		<div class="container-fluid overflow-hidden">
 			<div class="row vh-100 overflow-auto gx-5">
 				<!-- Sidebar  -->
 				<%- include('../../layouts/sidebar.ejs') %>
 
 				<!-- Content -->
-				<div class="col d-flex flex-column h-sm-100">
+				<div class="col d-flex flex-column h-100">
 					<main class="row overflow-auto">
 						<div class="col pt-4">
 							<h3>Categories</h3>
+
+							<a href="/categories/create" class="btn btn-primary mt-4">
+								<span class="fa fa-plus me-3"></span> Create Category</a
+							>
+							<div class="row mt-4">
+								<div class="col-md-10">
+									<div class="card">
+										<div class="card-body">
+											<form action="/categories" method="get" class="mb-4">
+												<div class="row g-3 align-items-center">
+													<div class="col-auto">
+														<label for="inputPassword6" class="col-form-label"
+															>Search</label
+														>
+													</div>
+													<div class="col-auto">
+														<input
+															type="text"
+															id="inputPassword6"
+															class="form-control"
+															name="search"
+															value="<%=search%>"
+														/>
+													</div>
+													<div class="col-auto">
+														<button type="submit" class="btn btn-secondary">
+															<i class="fa fa-search"></i>
+														</button>
+													</div>
+												</div>
+											</form>
+											<table class="table table-hover">
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Name</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<% result.forEach((element, i) => { %>
+													<tr>
+														<td><%= i+1 %></td>
+														<td><%= element.name %></td>
+														<td>
+															<div class="d-inline-flex">
+																<a
+																	href="/categories/edit/<%=element.id%>"
+																	class="btn btn-warning me-2"
+																	>Edit</a
+																>
+																<form
+																	action="/categories/delete/<%=element.id%>"
+																	method="post"
+																>
+																	<button type="submit" class="btn btn-danger">
+																		Delete
+																	</button>
+																</form>
+															</div>
+														</td>
+													</tr>
+													<% }); %> <% if (result.length === 0) { %>
+													<tr class="text-center">
+														<td colspan="3">No data</td>
+													</tr>
+
+													<% } %>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</main>
 					<%- include('../../layouts/footer.ejs') %>
