@@ -7,6 +7,9 @@ const flash = require('connect-flash');
 var session = require('express-session');
 const flashMessageMiddleware = require('./middlewares/flashMessage');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./config/swagger.json');
+
 const port = process.env.PORT || 3001;
 
 const routes = require('./routes');
@@ -20,6 +23,8 @@ app.use(flash());
 app.use(flashMessageMiddleware.flashMessage);
 
 app.use(routes);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.static(path.join(__dirname, '../public')));
 

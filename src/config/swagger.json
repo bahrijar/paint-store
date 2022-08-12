@@ -1,0 +1,668 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Bahri Paint Store",
+    "contact": {}
+  },
+  "host": "bahri-paint-store.herokuapp.com",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/categories": {
+      "get": {
+        "summary": "List Categories",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "ListCategories",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categories/create": {
+      "post": {
+        "summary": "Create",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "Create",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categories/edit/1": {
+      "post": {
+        "summary": "Update",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "Update",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categories/delete/1": {
+      "post": {
+        "summary": "Delete",
+        "tags": [
+          "categories"
+        ],
+        "operationId": "Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/paints": {
+      "get": {
+        "summary": "List Paints",
+        "tags": [
+          "paints"
+        ],
+        "operationId": "ListPaints",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/paints/create": {
+      "post": {
+        "summary": "Create",
+        "tags": [
+          "paints"
+        ],
+        "operationId": "PostCreate",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateRequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/paints/edit/1": {
+      "post": {
+        "summary": "Update",
+        "tags": [
+          "paints"
+        ],
+        "operationId": "PostUpdate",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateRequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/paints/delete/1": {
+      "post": {
+        "summary": "Delete",
+        "tags": [
+          "paints"
+        ],
+        "operationId": "PostDelete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers": {
+      "get": {
+        "summary": "List Customers",
+        "tags": [
+          "customers"
+        ],
+        "operationId": "ListCustomers",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/create": {
+      "post": {
+        "summary": "Create",
+        "tags": [
+          "customers"
+        ],
+        "operationId": "PostCreate1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateRequest2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/edit/1": {
+      "post": {
+        "summary": "Update",
+        "tags": [
+          "customers"
+        ],
+        "operationId": "PostUpdate1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateRequest2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/delete/1": {
+      "post": {
+        "summary": "Delete",
+        "tags": [
+          "customers"
+        ],
+        "operationId": "PostDelete1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "summary": "List Orders",
+        "tags": [
+          "orders"
+        ],
+        "operationId": "ListOrders",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/orders/create": {
+      "post": {
+        "summary": "Create",
+        "tags": [
+          "orders"
+        ],
+        "operationId": "PostCreate2",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateRequest3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/orders/edit/1": {
+      "post": {
+        "summary": "Update",
+        "tags": [
+          "orders"
+        ],
+        "operationId": "PostUpdate2",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateRequest3"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/orders/delete/1": {
+      "post": {
+        "summary": "Delete",
+        "tags": [
+          "orders"
+        ],
+        "operationId": "PostDelete2",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateRequest": {
+      "title": "CreateRequest",
+      "example": {
+        "name": "Acrylic"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "UpdateRequest": {
+      "title": "UpdateRequest",
+      "example": {
+        "name": "Acrylic"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "CreateRequest1": {
+      "title": "CreateRequest1",
+      "example": {
+        "name": "string",
+        "image": "string",
+        "price": "integer or number",
+        "stock": "integer or number",
+        "CategoryId": "id category"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "string"
+        },
+        "CategoryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "image",
+        "price",
+        "stock",
+        "CategoryId"
+      ]
+    },
+    "UpdateRequest1": {
+      "title": "UpdateRequest1",
+      "example": {
+        "name": "string",
+        "image": "string",
+        "price": "integer or number",
+        "stock": "integer or number",
+        "CategoryId": "id category"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "string"
+        },
+        "CategoryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "image",
+        "price",
+        "stock",
+        "CategoryId"
+      ]
+    },
+    "CreateRequest2": {
+      "title": "CreateRequest2",
+      "example": {
+        "name": "string",
+        "phoneNumber": "string",
+        "city": "string",
+        "district": "string",
+        "address": "string"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "phoneNumber",
+        "city",
+        "district",
+        "address"
+      ]
+    },
+    "UpdateRequest2": {
+      "title": "UpdateRequest2",
+      "example": {
+        "name": "string",
+        "phoneNumber": "string",
+        "city": "string",
+        "district": "string",
+        "address": "string"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "phoneNumber",
+        "city",
+        "district",
+        "address"
+      ]
+    },
+    "CreateRequest3": {
+      "title": "CreateRequest3",
+      "example": {
+        "quantity": "integer or number",
+        "totalPrice": "integer or number",
+        "CustomerId": "id",
+        "PaintId": "id"
+      },
+      "type": "object",
+      "properties": {
+        "quantity": {
+          "type": "string"
+        },
+        "totalPrice": {
+          "type": "string"
+        },
+        "CustomerId": {
+          "type": "string"
+        },
+        "PaintId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quantity",
+        "totalPrice",
+        "CustomerId",
+        "PaintId"
+      ]
+    },
+    "UpdateRequest3": {
+      "title": "UpdateRequest3",
+      "example": {
+        "quantity": "integer or number",
+        "totalPrice": "integer or number",
+        "CustomerId": "id",
+        "PaintId": "id"
+      },
+      "type": "object",
+      "properties": {
+        "quantity": {
+          "type": "string"
+        },
+        "totalPrice": {
+          "type": "string"
+        },
+        "CustomerId": {
+          "type": "string"
+        },
+        "PaintId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quantity",
+        "totalPrice",
+        "CustomerId",
+        "PaintId"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "categories"
+    },
+    {
+      "name": "paints"
+    },
+    {
+      "name": "customers"
+    },
+    {
+      "name": "orders"
+    }
+  ]
+}
