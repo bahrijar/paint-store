@@ -15,7 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     }
     Order.init(
         {
-            quantity: DataTypes.INTEGER,
+            quantity: {
+                allowNull: false,
+                type: DataTypes.INTEGER,
+                validate: {
+                    notEmpty: {
+                        msg: 'Quantity cannot be empty'
+                    }
+                }
+            },
             totalPrice: DataTypes.INTEGER
         },
         {
