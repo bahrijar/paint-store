@@ -1,0 +1,17 @@
+# pg-sequlize
+
+## Sequelize Script
+
+```bash
+npx sequelize-cli model:generate --name Category --attributes name:string
+npx sequelize-cli model:generate --name Paint --attributes name:string,image:string,price:bigint,stock:integer
+npx sequelize-cli model:generate --name Order --attributes quantity:integer,totalPrice:integer
+npx sequelize-cli model:generate --name Customer --attributes name:string,phoneNumber:string,city:string,district:string,address:string
+
+
+
+npx sequelize-cli model:generate --name Paint --attributes name:string
+
+npx sequelize-cli model:generate --name Pirate --attributes name:string,status:string,type:string,bounty:integer,image:string,ShipId:integer
+
+```
